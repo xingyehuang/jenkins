@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn -DskipTests package'
             }
         }
+        stage('install') {
+            steps {
+                sh 'mvn -DskipTests install'
+            }
+        }
         stage('启动服务') {
             steps {
                 sh 'cd /var/lib/docker/volumes/jenkins_home/_data/workspace/myJenkins/target'
