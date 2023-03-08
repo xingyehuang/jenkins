@@ -36,7 +36,8 @@ pipeline {
                 stage('打包镜像') {
                     steps {
                         sh 'pwd'
-                        sh 'cd ${WORKSPACE} && ll'
+                        sh 'cd ${WORKSPACE}'
+                        sh 'ls'
                         sh 'sh build.sh'
                     }
                 }
