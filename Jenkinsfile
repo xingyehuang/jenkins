@@ -26,11 +26,26 @@ pipeline {
                 				"""
             }
         }
-                stage('启动服务') {
+//                 stage('打包镜像') {
+//                     steps {
+//                         sh 'pwd'
+//                         sh 'cd ${WORKSPACE} && sh start03.sh'
+//                         sh 'pwd'
+//                     }
+//                 }
+                stage('打包镜像') {
                     steps {
                         sh 'pwd'
-                        sh 'cd ${WORKSPACE} && sh start03.sh'
+                        sh 'docker rm -f $(docker ps -a | grep "myjeninsboot" | awk '{print $1}')'
+                        sh 'docker build -t myjeninsboot:v1'
+                        sh 'docker images'
                         sh 'pwd'
+                    }
+                }
+                stage('启动镜像') {
+                    steps {
+                        sh 'pwd'
+                        sh 'docker run -it -p 3389:3389 --name myjeninsboot  myjeninsboot:v1'
                     }
                 }
     }
