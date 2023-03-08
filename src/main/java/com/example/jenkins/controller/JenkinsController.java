@@ -10,6 +10,7 @@ public class JenkinsController {
 
     @GetMapping("/send")
     public String send(String param) {
+        param = "jenkins:" + param;
         return param;
     }
 }
