@@ -29,7 +29,7 @@ pipeline {
                 stage('启动服务') {
                     steps {
                         sh 'pwd'
-                        sh 'cd ${WORKSPACE} && sh start.sh'
+                        sh 'cd ${WORKSPACE} && sh start02.sh'
                         sh 'pwd'
                     }
                 }
