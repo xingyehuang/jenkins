@@ -25,6 +25,7 @@ pipeline {
             steps {
 			    				sh """
                 					pwd
+                					sudo chmod 777 ${WORKSPACE}
                 					cp target/${JARFILENAME} ${WORKSPACE}
                 					cd ${WORKSPACE}
                 					nohup java -jar jenkins-0.0.1-SNAPSHOT.jar > info.log 2>&1 &
