@@ -35,15 +35,16 @@ pipeline {
 //                 }
                 stage('打包镜像') {
                     steps {
-                    	sh """
-                             pwd
-                             cd /docker/volume/maven/apache-maven-3.9.0/project
-                             pwd
-                             docker rm -f $(docker ps -a | grep myjeninsboot | awk '{print $1}')
-                             docker rmi myjeninsboot:v1
-                             docker build -t myjeninsboot:v1 .
-                             docker images
-                          """
+//                     	sh """
+//                              pwd
+//                              cd /docker/volume/maven/apache-maven-3.9.0/project
+//                              pwd
+//                              docker rm -f $(docker ps -a | grep myjeninsboot | awk '{print $1}')
+//                              docker rmi myjeninsboot:v1
+//                              docker build -t myjeninsboot:v1 .
+//                              docker images
+//                           """
+                        sh 'pwd'
                     }
                 }
                 stage('启动镜像') {
