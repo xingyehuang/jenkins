@@ -50,7 +50,7 @@ pipeline {
                 stage('启动镜像') {
                     steps {
                         sh 'pwd'
-                        sh 'docker run -it -p 3389:3389 --name myjeninsboot  myjeninsboot:v1'
+                        sh 'docker run -d -p 3389:3389 --name myjeninsboot  myjeninsboot:v1'
                     }
                 }
     }
