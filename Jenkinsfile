@@ -35,21 +35,13 @@ pipeline {
 //                 }
                 stage('打包镜像') {
                     steps {
-                    	sh """
-                             pwd
-//                              cd /docker/volume/maven/apache-maven-3.9.0/project
-//                              pwd
-//                              docker rm -f $(docker ps -a | grep myjeninsboot | awk '{print $1}')
-//                              docker rmi myjeninsboot:v1
-//                              docker build -t myjeninsboot:v1 .
-//                              docker images
-                          """
                         sh 'pwd'
+                        sh 'cd ${WORKSPACE}'
+                        sh 'sh build.sh'
                     }
                 }
                 stage('启动镜像') {
                     steps {
-                        sh 'pwd'
                         sh 'docker run -d -p 3389:3389 --name myjeninsboot  myjeninsboot:v1'
                     }
                 }
