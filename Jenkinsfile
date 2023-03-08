@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn -DskipTests install'
             }
         }
-        stage('启动服务') {
+        stage('拷贝目录到启动目录') {
             steps {
 			    				sh """
                 					pwd
@@ -32,6 +32,11 @@ pipeline {
                 				"""
             }
         }
+                stage('启动服务') {
+                    steps {
+                        sh 'nohup java -jar jenkins-0.0.1-SNAPSHOT.jar > info.log 2>&1 &'
+                    }
+                }
     }
 
 }
