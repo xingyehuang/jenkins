@@ -37,7 +37,7 @@ pipeline {
                     steps {
                     			    				sh """
                                     					pwd
-                                    					cd ${WORKSPACE}
+                                    					cd /docker/volume/maven/apache-maven-3.9.0/project
                                     					pwd
                                     					docker rm -f $(docker ps -a | grep myjeninsboot | awk '{print $1}')
                                     					docker rmi myjeninsboot:v1
