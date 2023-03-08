@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-		WORKSPACE="/docker/volume/project"
+		WORKSPACE="/docker/volume/maven/apache-maven-3.9.0/project"
 		SERVER_NAME="jenkins"
 		JARFILENAME="jenkins-0.0.1-SNAPSHOT.jar"
 	}
