@@ -29,6 +29,8 @@ pipeline {
                 stage('启动服务') {
                     steps {
                         sh 'pwd'
+                        sh 'cd ${WORKSPACE}'
+                        sh 'pwd'
                         sh 'sh start.sh'
                     }
                 }
