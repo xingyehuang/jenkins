@@ -28,8 +28,8 @@ pipeline {
         }
                 stage('启动服务') {
                     steps {
-                        sh 'BUILD_ID=donKillMe'
-                        sh 'nohup java -jar jenkins-x.0.1-SNAPSHOT.jar >> jenkins.log 2>&1 &'
+                        sh 'export BUILD_ID=dontKillMe'
+                        sh 'nohup java -jar jenkins-0.0.1-SNAPSHOT.jar >> jenkins.log 2>&1 &'
                     }
                 }
     }
