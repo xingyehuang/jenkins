@@ -36,7 +36,7 @@ pipeline {
                 stage('打包镜像') {
                     steps {
                         sh 'pwd'
-                        sh 'docker rm -f $(docker ps -a | grep "myjeninsboot" | awk '{print $1}')'
+                        sh 'docker rm -f $(docker ps -a | grep myjeninsboot | awk '{print $1}')'
                         sh 'docker build -t myjeninsboot:v1'
                         sh 'docker images'
                         sh 'pwd'
