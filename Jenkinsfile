@@ -2,7 +2,7 @@ pipeline {
 	environment {
 		WORKSPACE="/docker/volume/project"
 		SERVER_NAME="jenkins"
-		JARFILENAME="jenkinse*.jar"
+		JARFILENAME="jenkins-0.0.1-SNAPSHOT.jar"
 	}
     agent any
     stages {
